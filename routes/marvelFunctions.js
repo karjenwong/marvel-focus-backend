@@ -5,8 +5,8 @@ require("dotenv").config();
 
 //Marvel Api stuff
 const base_url = "http://gateway.marvel.com/v1/public/";
-const privatekey = process.env.MARVELPRIVKEY4;
-const publickey = process.env.MARVELPUBKEY4;
+const privatekey = process.env.MARVELPRIVKEY;
+const publickey = process.env.MARVELPUBKEY;
 const timestamp = +new Date();
 const hash =
   "&ts=" +
@@ -22,8 +22,7 @@ const axiosOneCall = (q, callBack) => {
   axios
     .get(base_url + parameter + "?nameStartsWith=" + q + hash)
     .then(response => {
-      console.log(response.data)
-        if (
+      if (
         response.data.data.total === 0 ||
         response.data.data.results[0].thumbnail.path.slice(-19) ===
           "image_not_available"
