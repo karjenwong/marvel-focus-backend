@@ -5,8 +5,8 @@ require("dotenv").config();
 
 //Marvel Api stuff
 const base_url = "http://gateway.marvel.com/v1/public/";
-const privatekey = process.env.MARVELPRIVKEY2;
-const publickey = process.env.MARVELPUBKEY2;
+const privatekey = process.env.MARVELPRIVKEY3;
+const publickey = process.env.MARVELPUBKEY3;
 const timestamp = +new Date();
 const hash =
   "&ts=" +

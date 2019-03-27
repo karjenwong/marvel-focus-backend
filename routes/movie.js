@@ -16,8 +16,9 @@ router.post("/", (req, res) => {
     .then(response => {
       res.json({
         movieTitle: response.data.results[0].title,
+        backdrop: "https://image.tmdb.org/t/p/w780"+response.data.results[0].backdrop_path,
         poster:
-          "https://image.tmdb.org/t/p/original" +
+          "https://image.tmdb.org/t/p/w780" +
           response.data.results[0].poster_path,
         dbId: response.data.results[0].id,
         overview: response.data.results[0].overview,
