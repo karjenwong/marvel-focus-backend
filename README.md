@@ -8,6 +8,6 @@ Please ensure that you have the front end portion up and running at "https://git
 3. "https://www.themoviedb.org" for movieDb api key
 4. "https://developer.marvel.com/"
 5. api keys will need to be placed in the relevant files: marvelFunctions, movie, youtube
-2. npm start
+6. node server.js
 
 
