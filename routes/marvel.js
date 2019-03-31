@@ -8,7 +8,7 @@ const {
 } = require("./marvelFunctions");
 
 router.post("/", (req, res) => {
-  //transform data?
+  //transform data
   const characterData = query => {
     if (query.includes("/")) {
       let checkformany = query.split("/");

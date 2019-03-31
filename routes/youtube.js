@@ -11,15 +11,15 @@ router.post('/', (req, res) => {
     const channelSearchParameters = `?part=snippet&q=${channelName}&type=channel`
 
     const movieName = req.body.movie
-    const movieSearchParameters = `?part=snippet&q=${movieName}+trailer&order=viewCount&type=video&videoDefinition=high&videoEmbeddable=true`
+    const movieSearchParameters = `?part=snippet&q=${movieName}+trailer&order=relevance&type=video&videoDefinition=high&videoEmbeddable=true`
 
     axios.get(`${base_url}${channelSearchParameters}${api_key}`)
         .then(response => response.data.items[0].id.channelId)
         .then(channelId => {            
             axios.get(`${base_url}${movieSearchParameters}${api_key}`)
                 .then(response => {
-                    let trailerInfo = response.data.items.find(test => {
-                        return test.snippet.channelId===channelId 
+                    let trailerInfo = response.data.items.find(info => {
+                        return info.snippet.channelId===channelId 
                     })
                     res.json(trailerInfo)
                 })

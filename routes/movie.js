@@ -4,8 +4,7 @@ const axios = require("axios");
 require("dotenv").config();
 const api_key = "?api_key=" + process.env.MOVIEDBKEY;
 
-//movie id is 299537 for captain marvel
-
+//Movie Info
 router.post("/", (req, res) => {
   let query = req.body.movie;
 
@@ -16,7 +15,9 @@ router.post("/", (req, res) => {
     .then(response => {
       res.json({
         movieTitle: response.data.results[0].title,
-        backdrop: "https://image.tmdb.org/t/p/w780"+response.data.results[0].backdrop_path,
+        backdrop:
+          "https://image.tmdb.org/t/p/w780" +
+          response.data.results[0].backdrop_path,
         poster:
           "https://image.tmdb.org/t/p/w780" +
           response.data.results[0].poster_path,
